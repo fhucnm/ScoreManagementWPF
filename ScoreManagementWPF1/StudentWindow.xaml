@@ -1,0 +1,29 @@
+﻿<Window x:Class="ScoreManagementWPF1.StudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoreManagementWPF1"
+        mc:Ignorable="d"
+        Title="StudentWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+            <TextBlock Text="Chọn môn học:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <ComboBox x:Name="cbSubjects"
+                      DisplayMemberPath="SubjectTitle"
+                      SelectedValuePath="CourseSubjectId"
+                      SelectionChanged="cbSubjects_SelectionChanged"
+                      Height="30"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgStudentMarks" AutoGenerateColumns="False" Margin="0,50,0,0" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Thành phần" Binding="{Binding GradeTitle}" />
+                <DataGridTextColumn Header="Điểm" Binding="{Binding Score}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock x:Name="txtNote" Margin="0,0,0,10" VerticalAlignment="Bottom"
+                   FontStyle="Italic" Foreground="Gray" TextWrapping="Wrap"/>
+    </Grid>
+</Window>

@@ -1,0 +1,356 @@
+﻿<Window x:Class="ScoreManagementWPF1.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoreManagementWPF1"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="600" Width="1000">
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock x:Name="WelcomeText" FontSize="20" FontWeight="Bold"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"
+                       Margin="0,0,20,0" />
+            <Button Content="Đăng xuất"
+                    Click="Logout_Click"
+                    Width="90" Padding="10,5"
+                    Background="Tomato" Foreground="White"
+                    HorizontalAlignment="Right" />
+        </StackPanel>
+        <TabControl x:Name="MainTabControl" SelectionChanged="TabControl_SelectionChanged">
+            <!-- Tab 1: Quản lý sinh viên -->
+            <TabItem Header="Quản lý sinh viên">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="180.5"/>
+                        <ColumnDefinition Width="78.764"/>
+                        <ColumnDefinition Width="14.736"/>
+                        <ColumnDefinition Width="32"/>
+                        <ColumnDefinition Width="94"/>
+                        <ColumnDefinition Width="329*"/>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Form bên trái -->
+                    <StackPanel Grid.Column="0" Margin="0,0,10,0" Grid.ColumnSpan="5">
+                        <TextBlock Text="Chọn lớp học phần:"/>
+                        <ComboBox x:Name="CourseComboBox"
+                      DisplayMemberPath="Title"
+                      SelectedValuePath="CourseId"
+                      SelectionChanged="CourseComboBox_SelectionChanged"/>
+
+                        <TextBlock Text="Chọn môn học trong lớp:" Margin="0,10,0,0"/>
+                        <ComboBox x:Name="SubjectComboBox"
+                      DisplayMemberPath="Title"
+                      SelectedValuePath="SubjectId"/>
+
+                        <TextBlock Text="Chọn học sinh:" Margin="0,10,0,0"/>
+                        <ComboBox x:Name="StudentSelectComboBox"
+                      DisplayMemberPath="User.FullName"
+                      SelectedValuePath="StudentId"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Button Content="Thêm" Click="AddStudent_Click" Width="80"/>
+                            <Button Content="Cập nhật" Click="UpdateStudent_Click" Width="100" Margin="10,0,0,0"/>
+                            <Button Content="Hủy" Click="CancelEditStudent_Click" Width="80" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Bảng danh sách học sinh -->
+                    <StackPanel Grid.Column="5" Grid.ColumnSpan="3">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBox x:Name="StudentSearchBox" Width="250" Margin="0,0,10,0"/>
+                            <Button Content="Tìm kiếm" Click="SearchStudent_Click" Margin="0,0,5,0"/>
+
+                            <!-- Chọn lớp -->
+                            <TextBlock Text="Lớp học phần:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                            <ComboBox x:Name="cbCourseFilter"
+                                DisplayMemberPath="Title"
+                                SelectedValuePath="CourseId"
+                                SelectionChanged="cbCourseFilter_Selection"
+                                Width="150"
+                                Margin="0,0,10,0"/>
+
+                            <!-- Chọn môn -->
+                            <TextBlock Text="Môn học:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                            <ComboBox x:Name="cbSubjectFilter"
+                                DisplayMemberPath="Title"
+                                SelectedValuePath="SubjectId"
+                                SelectionChanged="SubjectComboBox_SelectionChanged"
+                                Width="150"
+                                Margin="0,0,10,0"/>
+                        </StackPanel>
+
+                        <DataGrid x:Name="StudentDataGrid" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Mã HS" Binding="{Binding StudentId}" Width="50"/>
+                                <DataGridTextColumn Header="Tên" Binding="{Binding FullName}" Width="100"/>
+                                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="150"/>
+                                <DataGridTextColumn Header="Lớp học" Binding="{Binding CourseTitle}" Width="150"/>
+                                <DataGridTextColumn Header="Môn - GV" Binding="{Binding Subjects}" Width="200"/>
+
+                                <DataGridTemplateColumn Header="Hành động" Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Content="Sửa" Margin="5,0" Click="EditStudent_Click" Tag="{Binding}"/>
+                                                <Button Content="Xóa" Margin="5,0" Click="DeleteStudent_Click" Tag="{Binding}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+
+            <!-- Tab 2: Quản lý môn học (bổ sung thêm phần tạo điểm thành phần cho môn đó) -->
+            <TabItem Header="Quản lý môn học">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="400"/>
+                        <!-- Bên trái: Form -->
+                        <ColumnDefinition Width="*"/>
+                        <!-- Bên phải: DataGrid -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- BÊN TRÁI: Form nhập và điểm thành phần -->
+                    <StackPanel Grid.Column="0" Margin="10">
+                        <TextBlock Text="Mã môn học:"/>
+                        <TextBox x:Name="txtSubjectId" IsReadOnly="True"/>
+
+                        <TextBlock Text="Tên môn học:" Margin="0,10,0,0"/>
+                        <TextBox x:Name="txtSubjectTitle"/>
+
+                        <TextBlock Text="Số tín chỉ:" Margin="0,10,0,0"/>
+                        <TextBox x:Name="txtSubjectCredit"/>
+
+                        <TextBlock Text="Mô tả:" Margin="0,10,0,0"/>
+                        <TextBox x:Name="txtSubjectDesc" Height="60"/>
+
+                        <TextBlock Text="Thành phần điểm của môn học:" Margin="0,20,0,5" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="txtGradeItemTitle" Width="140" Margin="0,0,5,0" Text="Tên thành phần"/>
+                            <TextBox x:Name="txtGradeItemWeight" Width="60" Text="Trọng số %"/>
+                            <Button Content="Thêm" Click="AddGradeItem_Click" Margin="10,0,0,0"/>
+                            <Button Content="Sửa" Click="UpdateGradeItem_Click" Margin="5,0,0,0"/>
+                        </StackPanel>
+
+                        <ListBox x:Name="lstGradeItems" Height="100" Margin="0,10,0,0">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Title}" Width="120"/>
+                                        <TextBlock Text="{Binding Value}" Width="50"/>
+                                        <Button Content="Sửa" Click="EditGradeItem_Click" Tag="{Binding}" Margin="10,0,0,0"/>
+                                        <Button Content="Xóa" Click="DeleteGradeItem_Click" Tag="{Binding}" Margin="10,0,0,0"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                            <Button Content="Thêm" Width="80" Click="AddSubject_Click"/>
+                            <Button Content="Sửa" Width="80" Margin="10,0,0,0" Click="UpdateSubject_Click"/>
+                            <Button Content="Hủy" Width="80" Margin="10,0,0,0" Click="CancelEditSubject_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- BÊN PHẢI: Danh sách môn học -->
+                    <StackPanel Grid.Column="1">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBox x:Name="txtSearchSubject" Width="200"/>
+                            <Button Content="Tìm" Click="SearchSubject_Click" Margin="10,0,0,0"/>
+                        </StackPanel>
+
+                        <DataGrid x:Name="dgSubjects" AutoGenerateColumns="False" Height="400">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Mã môn" Binding="{Binding SubjectId}" Width="60"/>
+                                <DataGridTextColumn Header="Tên môn" Binding="{Binding Title}" Width="200"/>
+                                <DataGridTextColumn Header="Tín chỉ" Binding="{Binding Credit}" Width="80"/>
+                                <DataGridTextColumn Header="Mô tả" Binding="{Binding Description}" Width="200"/>
+                                <DataGridTemplateColumn Header="Hành động" Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Content="Sửa" Margin="5,0" Click="EditSubject_Click" Tag="{Binding}"/>
+                                                <Button Content="Xóa" Margin="5,0" Click="DeleteSubject_Click" Tag="{Binding}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Tab 3: Quản lý lớp học phần (bổ sung chọn môn học liên kết) -->
+            <TabItem Header="Quản lý lớp học phần">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="23"/>
+                        <ColumnDefinition Width="7"/>
+                        <ColumnDefinition Width="69.5"/>
+                        <ColumnDefinition Width="19.5"/>
+                        <ColumnDefinition Width="24"/>
+                        <ColumnDefinition Width="237"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="10,10,10,10" Grid.ColumnSpan="7">
+                        <TextBlock Text="Mã lớp:"/>
+                        <TextBox x:Name="txtCourseId"/>
+                        <TextBlock Text="Tên lớp:"/>
+                        <TextBox x:Name="txtCourseTitle"/>
+                        <TextBlock Text="Ngày bắt đầu:"/>
+                        <DatePicker x:Name="dpStartDate"/>
+                        <TextBlock Text="Ngày kết thúc:"/>
+                        <DatePicker x:Name="dpEndDate"/>
+
+                        <TextBlock Text="Chọn môn học thuộc lớp:" FontWeight="Bold" Margin="10,10,0,5"/>
+                        <ComboBox x:Name="cbxCourseSubject" DisplayMemberPath="Title" SelectedValuePath="SubjectId" Width="250"/>
+
+                        <TextBlock Text="Chọn giáo viên phụ trách môn:" Margin="0,10,0,0"/>
+                        <ComboBox x:Name="cbxTeacher" DisplayMemberPath="FullName" SelectedValuePath="UserID" Width="250"/>
+
+                        <Button Content="Thêm môn học vào lớp" Click="AddCourseSubject_Click" Width="200" Margin="0,5,0,0"/>
+
+
+                        <ListBox x:Name="lstCourseSubjects" Height="100">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Title}" Width="200"/>
+                                        <TextBlock Text=" - GV: " />
+                                        <TextBlock Text="{Binding TeacherName}" Width="200"/>
+                                        <Button Content="Sửa" Click="EditCourseSubject_Click" Tag="{Binding}" Margin="10,0,0,0"/>
+                                        <Button Content="Xóa" Click="RemoveCourseSubject_Click" Tag="{Binding}" Margin="10,0,0,0"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Button Content="Thêm" Width="80" Click="AddCourse_Click"/>
+                            <Button Content="Sửa" Width="80" Margin="10,0,0,0" Click="UpdateCourse_Click"/>
+                            <Button Content="Hủy" Width="80" Margin="10,0,0,0" Click="CancelCourse_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Column="7">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBox x:Name="txtSearchCourse" Width="200"/>
+                            <Button Content="Tìm" Click="SearchCourse_Click" Margin="10,0,0,0"/>
+                        </StackPanel>
+                        <DataGrid x:Name="dgCourses" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Mã lớp" Binding="{Binding CourseId}" Width="80"/>
+                                <DataGridTextColumn Header="Tên lớp" Binding="{Binding Title}" Width="200"/>
+                                <DataGridTextColumn Header="Bắt đầu" Binding="{Binding StartDate}" Width="120"/>
+                                <DataGridTextColumn Header="Kết thúc" Binding="{Binding EndDate}" Width="120"/>
+                                <DataGridTemplateColumn Header="Môn học - GV" Width="300">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding SubjectInfo}"
+                                                TextWrapping="Wrap"
+                                                TextTrimming="CharacterEllipsis"
+                                                MaxWidth="280"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Hành động" Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Content="Sửa" Margin="5,0" Click="EditCourse_Click"
+                        Tag="{Binding CourseId}" />
+                                                <Button Content="Xóa" Margin="5,0" Click="DeleteCourse_Click"
+                        Tag="{Binding CourseId}" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem Header="Thêm thành viên mới">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Form Nhập -->
+                    <StackPanel Orientation="Vertical" Width="300" HorizontalAlignment="Left">
+                        <TextBlock Text="Username:"/>
+                        <TextBox x:Name="txtNewUsername"/>
+
+                        <TextBlock Text="Password:" Margin="0,10,0,0"/>
+                        <PasswordBox x:Name="txtNewPassword"/>
+
+                        <TextBlock Text="Họ và tên:" Margin="0,10,0,0"/>
+                        <TextBox x:Name="txtNewFullName"/>
+
+                        <TextBlock Text="Email:" Margin="0,10,0,0"/>
+                        <TextBox x:Name="txtNewEmail"/>
+
+                        <TextBlock Text="Vai trò:" Margin="0,10,0,0"/>
+                        <ComboBox x:Name="cbxNewRole" SelectedIndex="0">
+                            <ComboBoxItem Content="Student"/>
+                            <ComboBoxItem Content="Teacher"/>
+                            <ComboBoxItem Content="Admin"/>
+                        </ComboBox>
+
+                        <Button Content="Thêm/Cập nhật" Width="150" Margin="0,20,0,0" Click="AddUser_Click"/>
+                    </StackPanel>
+
+                    <!-- Tìm kiếm + Lọc -->
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,10,0,10">
+                        <TextBox x:Name="txtUserSearch" Width="200" Margin="0,0,10,0"/>
+                        <ComboBox x:Name="cbRoleFilter" Width="150" SelectionChanged="FilterUserList">
+                            <ComboBoxItem Content="Tất cả" IsSelected="True"/>
+                            <ComboBoxItem Content="Student"/>
+                            <ComboBoxItem Content="Teacher"/>
+                            <ComboBoxItem Content="Admin"/>
+                        </ComboBox>
+                        <Button Content="Tìm" Width="80" Click="FilterUserList"/>
+                    </StackPanel>
+
+                    <!-- Danh sách -->
+                    <DataGrid x:Name="dgUsers" Grid.Row="2" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Username" Binding="{Binding Username}" Width="100"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="150"/>
+                            <DataGridTextColumn Header="Họ tên" Binding="{Binding FullName}" Width="150"/>
+                            <DataGridTextColumn Header="Role" Binding="{Binding Role}" Width="80"/>
+                            <DataGridTemplateColumn Header="Hành động" Width="150">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Content="Sửa" Click="EditUser_Click" Tag="{Binding}" Margin="5,0"/>
+                                            <Button Content="Xóa" Click="DeleteUser_Click" Tag="{Binding}" Margin="5,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+
+
+        </TabControl>
+
+    </DockPanel>
+</Window>

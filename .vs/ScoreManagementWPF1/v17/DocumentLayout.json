@@ -1,0 +1,288 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\scoremanagementwpf1\\adminwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|solutionrelative:scoremanagementwpf1\\adminwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DAB2115-3ACF-481B-A01B-2091329E03EE}|DataAccess\\DataAccess.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\dataaccess\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4DAB2115-3ACF-481B-A01B-2091329E03EE}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8106F15-431E-46AA-98F4-BCE950D64B0C}|Service\\Service.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\service\\coursesubjectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8106F15-431E-46AA-98F4-BCE950D64B0C}|Service\\Service.csproj|solutionrelative:service\\coursesubjectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8106F15-431E-46AA-98F4-BCE950D64B0C}|Service\\Service.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\service\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8106F15-431E-46AA-98F4-BCE950D64B0C}|Service\\Service.csproj|solutionrelative:service\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8106F15-431E-46AA-98F4-BCE950D64B0C}|Service\\Service.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\service\\markservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8106F15-431E-46AA-98F4-BCE950D64B0C}|Service\\Service.csproj|solutionrelative:service\\markservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8106F15-431E-46AA-98F4-BCE950D64B0C}|Service\\Service.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\service\\subjectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8106F15-431E-46AA-98F4-BCE950D64B0C}|Service\\Service.csproj|solutionrelative:service\\subjectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DAB2115-3ACF-481B-A01B-2091329E03EE}|DataAccess\\DataAccess.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\dataaccess\\models\\coursesubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DAB2115-3ACF-481B-A01B-2091329E03EE}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\coursesubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\scoremanagementwpf1\\studentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|solutionrelative:scoremanagementwpf1\\studentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\scoremanagementwpf1\\studentwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|solutionrelative:scoremanagementwpf1\\studentwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\FPT Shop\\AppData\\Local\\Temp\\.vsdbgsrc\\b8b74ed96cb310e7521b08fc2fd291b3e429a4b509c86c75e9f5ab857cffbff6\\PropertyPathWorker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\scoremanagementwpf1\\teacherwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|solutionrelative:scoremanagementwpf1\\teacherwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\scoremanagementwpf1\\teacherwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|solutionrelative:scoremanagementwpf1\\teacherwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|e:\\k\u00EC_5\\prn212\\se1912\\scoremanagementwpf1\\scoremanagementwpf1\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A57E66C5-39FE-4B9B-99B6-B3781E933AAB}|ScoreManagementWPF1\\ScoreManagementWPF1.csproj|solutionrelative:scoremanagementwpf1\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 24,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:19:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\DataAccess\\appsettings.json",
+              "RelativeDocumentMoniker": "DataAccess\\appsettings.json",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\DataAccess\\appsettings.json",
+              "RelativeToolTip": "DataAccess\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-06T15:35:13.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SubjectService.cs",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\Service\\SubjectService.cs",
+              "RelativeDocumentMoniker": "Service\\SubjectService.cs",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\Service\\SubjectService.cs",
+              "RelativeToolTip": "Service\\SubjectService.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T01:13:54.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CourseSubject.cs",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\DataAccess\\Models\\CourseSubject.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Models\\CourseSubject.cs",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\DataAccess\\Models\\CourseSubject.cs",
+              "RelativeToolTip": "DataAccess\\Models\\CourseSubject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T01:10:18.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CourseSubjectService.cs",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\Service\\CourseSubjectService.cs",
+              "RelativeDocumentMoniker": "Service\\CourseSubjectService.cs",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\Service\\CourseSubjectService.cs",
+              "RelativeToolTip": "Service\\CourseSubjectService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T01:09:47.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CourseService.cs",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\Service\\CourseService.cs",
+              "RelativeDocumentMoniker": "Service\\CourseService.cs",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\Service\\CourseService.cs",
+              "RelativeToolTip": "Service\\CourseService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T01:09:32.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PropertyPathWorker.cs",
+              "DocumentMoniker": "C:\\Users\\FPT Shop\\AppData\\Local\\Temp\\.vsdbgsrc\\b8b74ed96cb310e7521b08fc2fd291b3e429a4b509c86c75e9f5ab857cffbff6\\PropertyPathWorker.cs",
+              "ToolTip": "C:\\Users\\FPT Shop\\AppData\\Local\\Temp\\.vsdbgsrc\\b8b74ed96cb310e7521b08fc2fd291b3e429a4b509c86c75e9f5ab857cffbff6\\PropertyPathWorker.cs [Read Only]",
+              "ViewState": "AgIAAJ8EAAAAAAAAAAAiwKcEAAARAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T00:57:37.845Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StudentWindow.xaml.cs",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\StudentWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ScoreManagementWPF1\\StudentWindow.xaml.cs",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\StudentWindow.xaml.cs",
+              "RelativeToolTip": "ScoreManagementWPF1\\StudentWindow.xaml.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAD4vzEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T19:27:38.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StudentWindow.xaml",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\StudentWindow.xaml",
+              "RelativeDocumentMoniker": "ScoreManagementWPF1\\StudentWindow.xaml",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\StudentWindow.xaml",
+              "RelativeToolTip": "ScoreManagementWPF1\\StudentWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-28T00:48:24.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminWindow.xaml.cs",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\AdminWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ScoreManagementWPF1\\AdminWindow.xaml.cs",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\AdminWindow.xaml.cs",
+              "RelativeToolTip": "ScoreManagementWPF1\\AdminWindow.xaml.cs",
+              "ViewState": "AgIAAEEEAAAAAAAAAAAQwEoEAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T20:20:05.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AdminWindow.xaml",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\AdminWindow.xaml",
+              "RelativeDocumentMoniker": "ScoreManagementWPF1\\AdminWindow.xaml",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\AdminWindow.xaml",
+              "RelativeToolTip": "ScoreManagementWPF1\\AdminWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-27T20:16:28.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MarkService.cs",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\Service\\MarkService.cs",
+              "RelativeDocumentMoniker": "Service\\MarkService.cs",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\Service\\MarkService.cs",
+              "RelativeToolTip": "Service\\MarkService.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAkwCYAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T19:38:31.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TeacherWindow.xaml.cs",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\TeacherWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ScoreManagementWPF1\\TeacherWindow.xaml.cs",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\TeacherWindow.xaml.cs",
+              "RelativeToolTip": "ScoreManagementWPF1\\TeacherWindow.xaml.cs",
+              "ViewState": "AgIAAB8CAAAAAAAAAAAIwFUDAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T19:26:17.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TeacherWindow.xaml",
+              "DocumentMoniker": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\TeacherWindow.xaml",
+              "RelativeDocumentMoniker": "ScoreManagementWPF1\\TeacherWindow.xaml",
+              "ToolTip": "E:\\K\u00EC_5\\PRN212\\SE1912\\ScoreManagementWPF1\\ScoreManagementWPF1\\TeacherWindow.xaml",
+              "RelativeToolTip": "ScoreManagementWPF1\\TeacherWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-11T17:19:49.052Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
